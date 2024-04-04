@@ -1,0 +1,11 @@
+FROM maven:latest AS builder
+WORKDIR /usr/apiautomation
+COPY pom.xml /usr/apiautomation/pom.xml
+RUN mvn dependency:go-offline -B
+# ----- Final Stage -----------#
+FROM maven:latest AS dependencies
+WORKDIR /usr/apiautomation
+COPY --from=builder /root/.m2 /root/.m2
+VOLUME /root.m2
+
+

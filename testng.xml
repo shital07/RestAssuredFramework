@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="com.listeners.FrameworkListener"/>
+    </listeners>
+    <test verbose="2" parallel="methods" thread-count="3" name="/Users/megatron/Desktop/workspace_shital/RestAssured">
+        <classes>
+            <class name="com.tests.Get"/>
+            <class name="com.tests.Post"/>
+            <class name="com.tests.Assignment"/>
+            <class name="com.tests.JiraTest"/>
+        </classes>
+    </test>
+</suite>

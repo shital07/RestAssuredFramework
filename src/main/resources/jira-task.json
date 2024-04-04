@@ -1,0 +1,26 @@
+{
+  "fields": {
+    "project": {
+      "key": "RES"
+    },
+    "summary": "BlackListHeader in request",
+    "description": {
+      "type": "doc",
+      "version": 1,
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "This is a test task created via API."
+            }
+          ]
+        }
+      ]
+    },
+    "issuetype": {
+      "name": "Task"
+    }
+  }
+}
