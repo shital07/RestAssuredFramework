@@ -3,11 +3,10 @@ pipeline {
     stages {
         stage('Checkout git') {
             steps {
-                // checkout the source code from Git using credentails
+                // checkout the source code from Git using credentials
                 git credentialsId: 'GitID',
                         url: 'https://github.com/shital07/RestAssuredFramework.git',
-                echo 'Git checkout is successful'
-
+                        echo 'Git checkout is successful'
             }
         }
     }
