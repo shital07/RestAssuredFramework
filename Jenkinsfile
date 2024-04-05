@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Test - Regression') {
             steps {
-                sh 'mvn clean test'
+                sh '/Users/megatron/Desktop/libraries/apache-maven-3.9.6/bin/mvn clean test'
                 echo 'Testing is completed Successfully'
             }
         }
