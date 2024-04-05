@@ -7,5 +7,3 @@ FROM maven:latest AS dependencies
 WORKDIR /usr/apiautomation
 COPY --from=builder /root/.m2 /root/.m2
 VOLUME /root.m2
-
-

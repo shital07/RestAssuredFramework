@@ -4,7 +4,10 @@ import lombok.Getter;
 
 public class FrameworkConstant {
 
-    private static @Getter final String resourcePath = System.getProperty("user.dir")+ "src/main/resources";
+    private FrameworkConstant(){
+
+    }
+    private static final @Getter String resourcePath = System.getProperty("user.dir")+ "src/main/resources";
 
 
 }

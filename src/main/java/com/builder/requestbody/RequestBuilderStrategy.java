@@ -1,4 +1,4 @@
-package com.builder.requestBody;
+package com.builder.requestbody;
 
 public interface RequestBuilderStrategy {
 

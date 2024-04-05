@@ -1,7 +1,7 @@
 package com.tests;
 
 import com.annotations.FrameworkAnnotation;
-import com.builder.requestBody.AllRequestBuilderImpl;
+import com.builder.requestbody.AllRequestBuilderImpl;
 import com.pojo.Booking;
 import com.pojo.BookingDates;
 import com.reports.ExtendLogger;

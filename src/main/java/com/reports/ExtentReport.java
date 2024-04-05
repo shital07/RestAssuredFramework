@@ -32,7 +32,6 @@ public final class ExtentReport {
 
     public static void createTest(String name) {
 
-        System.out.println(name);
         test = reports.createTest(name);
         ExtendReportManager.setTest(test);
 
@@ -55,11 +54,11 @@ public final class ExtentReport {
     }
 
     public static void printAuthor(String[] authors){
-        Arrays.stream(authors).forEach((s)-> ExtendReportManager.getTest().assignAuthor(s));
+        Arrays.stream(authors).forEach(s-> ExtendReportManager.getTest().assignAuthor(s));
     }
 
     public static void printCategory(String[]  categories){
-        Arrays.stream(categories).forEach((s)-> ExtendReportManager.getTest().assignCategory(s));
+        Arrays.stream(categories).forEach(s-> ExtendReportManager.getTest().assignCategory(s));
     }
 }
 

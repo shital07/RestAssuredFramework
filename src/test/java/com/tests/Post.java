@@ -1,8 +1,8 @@
 package com.tests;
 
 import com.annotations.FrameworkAnnotation;
-import com.builder.requestBody.AllRequestBuilderImpl;
-import com.builder.requestBody.FileRequestBuilderImpl;
+import com.builder.requestbody.AllRequestBuilderImpl;
+import com.builder.requestbody.FileRequestBuilderImpl;
 import com.constants.FrameworkConstantSingleton;
 import com.github.javafaker.Faker;
 import com.pojo.Booking;

@@ -20,6 +20,7 @@ public class FrameworkListener implements ITestListener, ISuiteListener {
         ExtentReport.flushReport();
     }
 
+    @Override
     public void onTestStart(ITestResult result) {
         ExtentReport.createTest(result.getMethod().getMethodName());
         String[] authors = result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class)

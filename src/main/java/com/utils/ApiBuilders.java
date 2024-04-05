@@ -1,6 +1,6 @@
 package com.utils;
 
-import com.builder.requestBody.RequestBuilderStrategy;
+import com.builder.requestbody.RequestBuilderStrategy;
 import com.enums.PropertiesType;
 import io.restassured.specification.RequestSpecification;
 
