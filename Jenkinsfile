@@ -6,7 +6,8 @@ pipeline {
                 // checkout the source code from Git using credentials
                 git credentialsId: 'GitID',
                         url: 'https://github.com/shital07/RestAssuredFramework.git',
-                        echo 'Git checkout is successful'
+                        branch: 'main'
+                echo 'Git checkout is successful'
             }
         }
     }
