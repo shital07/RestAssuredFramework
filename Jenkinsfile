@@ -14,6 +14,7 @@ pipeline {
             steps {
                 sh '/Users/megatron/Desktop/libraries/apache-maven-3.9.6/bin/mvn clean test'
                 echo 'Testing is completed Successfully'
+                sh 'echo $PATH'
             }
         }
     }
