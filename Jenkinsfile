@@ -10,5 +10,11 @@ pipeline {
                 echo 'Git checkout is successful'
             }
         }
+        stage('Test - Regression') {
+            steps {
+                sh 'mvn clean test'
+                echo 'Testing is completed Successfully'
+            }
+        }
     }
 }
