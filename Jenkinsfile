@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         // Define the Maven tool
-        maven 'apache-maven-3.9.6' 
+       maven 'maven' 
     }
     stages {
         stage('Checkout git') {
