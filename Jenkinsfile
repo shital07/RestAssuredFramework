@@ -1,9 +1,7 @@
 pipeline {
     agent any
-    triggers{
-        githubPush(
-                branches: [[name: 'main']]
-        )
+    tools {
+        maven 'apache-maven-3.9.6' 
     }
     stages {
         stage('Checkout git') {
@@ -19,8 +17,9 @@ pipeline {
             steps {
                 script {
                     // Move the 'tool' step inside a 'script' block
-                    def mvnHome = tool name: 'Maven', type: 'maven'
-                    sh "${mvnHome}/bin/mvn clean test"
+                   // def mvnHome = tool name: 'Maven', type: 'maven'
+                   // sh "${mvnHome}/bin/mvn clean test"
+                    sh "mvn clean test"
                 }
                 echo 'Testing is completed Successfully'
             
