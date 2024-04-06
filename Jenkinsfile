@@ -12,9 +12,10 @@ pipeline {
         }
         stage('Test - Regression') {
             steps {
+                sh 'echo $PATH'
                 sh 'mvn clean test'
                 echo 'Testing is completed Successfully'
-                sh 'echo $PATH'
+            
             }
         }
     }
