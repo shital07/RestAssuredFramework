@@ -12,8 +12,11 @@ pipeline {
         }
         stage('Test - Regression') {
             steps {
-                def mvnHome = tool name: 'Maven', type: 'maven'
+                script {
+                    // Move the 'tool' step inside a 'script' block
+                    def mvnHome = tool name: 'Maven', type: 'maven'
                     sh "${mvnHome}/bin/mvn clean test"
+                }
                 echo 'Testing is completed Successfully'
             
             }
