@@ -1,6 +1,7 @@
 pipeline {
     agent any
     tools {
+        // Define the Maven tool
         maven 'apache-maven-3.9.6' 
     }
     stages {
@@ -16,13 +17,10 @@ pipeline {
         stage('Test - Regression') {
             steps {
                 script {
-                    // Move the 'tool' step inside a 'script' block
-                   // def mvnHome = tool name: 'Maven', type: 'maven'
-                   // sh "${mvnHome}/bin/mvn clean test"
+                    // Run Maven commands using the configured Maven tool
                     sh "mvn clean test"
                 }
                 echo 'Testing is completed Successfully'
-            
             }
         }
     }
