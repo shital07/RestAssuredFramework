@@ -12,11 +12,9 @@ pipeline {
         }
         stage('Test - Regression') {
             steps {
-               // sh 'echo $PATH'
-              //  sh 'mvn clean test'
-                which sh
-               // sh '/bin/sh -c "echo $PATH"'
-                //echo 'Testing is completed Successfully'
+                def mvnHome = tool name: 'Maven', type: 'maven'
+                    sh "${mvnHome}/bin/mvn clean test"
+                echo 'Testing is completed Successfully'
             
             }
         }
