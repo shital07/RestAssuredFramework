@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    triggers{
+        githubPush(branch: 'main')
+    }
     stages {
         stage('Checkout git') {
             steps {
