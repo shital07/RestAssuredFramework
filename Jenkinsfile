@@ -14,8 +14,9 @@ pipeline {
             steps {
                // sh 'echo $PATH'
               //  sh 'mvn clean test'
-                sh '/bin/sh -c "echo $PATH"'
-                echo 'Testing is completed Successfully'
+                which sh
+               // sh '/bin/sh -c "echo $PATH"'
+                //echo 'Testing is completed Successfully'
             
             }
         }
