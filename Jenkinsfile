@@ -2,11 +2,10 @@ pipeline {
     agent any
     /*tools {
         // Define the Maven tool
-       maven 'maven' 
+       maven 'maven'
     }*/
     environment {
         DOCKER_IMAGE = "shital0711/apitesting:latest"
-        DOCKER_CREDENTAILS = 'Dockerhub'
     }
 
     stages {
@@ -31,11 +30,14 @@ pipeline {
         stage('Push  the image to docker hub') {
             steps {
                 script {
-                    docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTAILS) {
-                        docker.image(DOCKER_IMAGE).push()
-                    }
+                    echo "Pushing the image to docker hub"
+                    withCredentials([usernamePassword(credentialsId:"Dockerhub",passwordVariable: "DockerhubPass",usernameVariable: "DockerhubUser" )])
+                  //  withCredentials([usernamePassword(credentialsId:"dockerHub",passwordVariable:"dockerHubPass",usernameVariable:"dockerHubUser")]){
+                    
+                        sh "docker login -u ${env.DockerhubUser} -p ${env.DockerhubPass}"
+                        sh "docker push ${DOCKER_IMAGE}"
 
-                }
+                    }
             }
         }
 
