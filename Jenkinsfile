@@ -4,11 +4,11 @@ pipeline {
         // Define the Maven tool
        maven 'maven' 
     }*/
-environment{
-DOCKER_IMAGE = 'shital0711/apitesting:latest'
-DOCKER_CREDENTAILS = credentails('Dockerhub')    
-}
-    
+    environment {
+        DOCKER_IMAGE = 'shital0711/apitesting:latest'
+        DOCKER_CREDENTAILS = credentials('Dockerhub')
+    }
+
     stages {
         stage('Checkout git') {
             steps {
@@ -28,16 +28,16 @@ DOCKER_CREDENTAILS = credentails('Dockerhub')
                 echo 'Building the docker image is sucessfully'
             }
         }
-        stage('Push  the image to docker hub'){
-            steps{
-                script{
+        stage('Push  the image to docker hub') {
+            steps {
+                script {
                     docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTAILS) {
-                    docker.image(DOCKER_IMAGE).push()
+                        docker.image(DOCKER_IMAGE).push()
                     }
-                        
+
                 }
             }
         }
-        
+
     }
 }
