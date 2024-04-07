@@ -19,14 +19,15 @@ pipeline {
                 echo 'Git checkout is successful'
             }
         }
-        stage('Test - Regression') {
+        stage('Test Image') {
             steps {
                 script {
                     // Run Maven commands using the configured Maven tool
-                    sh "mvn clean test"
+                    sh "docker build -t shital0711/apitesting:latest -f Dockerfile ."
                 }
-                echo 'Testing is completed Successfully'
+                echo 'Building docker image sucessfully'
             }
         }
+        
     }
 }
