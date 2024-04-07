@@ -1,9 +1,14 @@
 pipeline {
-    agent any
-    tools {
+    agent {
+        docker{
+            image 'maven:latest'
+            args '-v /var/run/docker.sock:/var/run/docker.sock'
+        }
+    }
+    /*tools {
         // Define the Maven tool
        maven 'maven' 
-    }
+    }*/
     stages {
         stage('Checkout git') {
             steps {
