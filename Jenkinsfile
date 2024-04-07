@@ -4,6 +4,11 @@ pipeline {
         // Define the Maven tool
        maven 'maven' 
     }*/
+environment{
+DOCKER_IMAGE = 'shital0711/apitesting:latest'
+DOCKER_CREDENTAILS = credentails('Dockerhub')    
+}
+    
     stages {
         stage('Checkout git') {
             steps {
@@ -14,13 +19,23 @@ pipeline {
                 echo 'Git checkout is successful'
             }
         }
-        stage('Test Image') {
+        stage('Build docker image') {
             steps {
                 script {
                     // Run Maven commands using the configured Maven tool
-                    sh "docker build -t shital0711/apitesting:latest -f Dockerfile ."
+                    sh "docker build -t $DOCKER_IMAGE -f Dockerfile ."
                 }
-                echo 'Building docker image sucessfully'
+                echo 'Building the docker image is sucessfully'
+            }
+        }
+        stage('Push  the image to docker hub'){
+            steps{
+                script{
+                    docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTAILS) {
+docker.image(DOCKER_IMAGE).push()
+                    }
+                        
+                }
             }
         }
         
