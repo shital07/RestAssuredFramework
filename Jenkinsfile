@@ -31,13 +31,15 @@ pipeline {
             steps {
                 script {
                     echo "Pushing the image to docker hub"
-                    withCredentials([usernamePassword(credentialsId:"Dockerhub",passwordVariable: "DockerhubPass",usernameVariable: "DockerhubUser" )])
-                  //  withCredentials([usernamePassword(credentialsId:"dockerHub",passwordVariable:"dockerHubPass",usernameVariable:"dockerHubUser")]){
-                    
+                    withCredentials([usernamePassword(credentialsId:"Dockerhub",passwordVariable: "DockerhubPass",usernameVariable: "DockerhubUser" )]){
                         sh "docker login -u ${env.DockerhubUser} -p ${env.DockerhubPass}"
-                        sh "docker push ${DOCKER_IMAGE}"
-
+                        sh "docker push ${DOCKER_IMAGE}" 
                     }
+                    //  withCredentials([usernamePassword(credentialsId:"dockerHub",passwordVariable:"dockerHubPass",usernameVariable:"dockerHubUser")]){
+
+                   
+
+                }
             }
         }
 
