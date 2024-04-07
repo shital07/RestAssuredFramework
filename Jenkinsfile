@@ -5,8 +5,8 @@ pipeline {
        maven 'maven' 
     }*/
     environment {
-        DOCKER_IMAGE = 'shital0711/apitesting:latest'
-        DOCKER_CREDENTAILS = credentials('Dockerhub')
+        DOCKER_IMAGE = "shital0711/apitesting:latest"
+        DOCKER_CREDENTAILS = 'Dockerhub'
     }
 
     stages {
