@@ -21,10 +21,10 @@ pipeline {
         stage('Build docker image') {
             steps {
                 script {
-                    // Run Maven commands using the configured Maven tool
+                    echo "Building the new docker image"
                     sh "docker build -t $DOCKER_IMAGE -f Dockerfile ."
                 }
-                echo 'Building the docker image is sucessfully'
+                echo 'Building the docker image is sucessfull.'
             }
         }
         stage('Push  the image to docker hub') {
