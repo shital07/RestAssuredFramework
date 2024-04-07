@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker{
-            image 'maven:latest'
-            args '-v /var/run/docker.sock:/var/run/docker.sock'
-        }
-    }
+    agent any
     /*tools {
         // Define the Maven tool
        maven 'maven' 
