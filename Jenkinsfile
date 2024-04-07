@@ -32,7 +32,7 @@ DOCKER_CREDENTAILS = credentails('Dockerhub')
             steps{
                 script{
                     docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTAILS) {
-docker.image(DOCKER_IMAGE).push()
+                    docker.image(DOCKER_IMAGE).push()
                     }
                         
                 }
