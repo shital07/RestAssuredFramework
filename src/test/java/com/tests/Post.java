@@ -25,7 +25,7 @@ import java.util.Map;
 import static com.utils.RandomUtils.getId;
 import static com.utils.RandomUtils.getName;
 
-@FrameworkAnnotation(authors = {"Shital Malviya"}, categories = {"Regression", "Smoke"})
+
 public class Post extends BaseTest {
 
     @Test
