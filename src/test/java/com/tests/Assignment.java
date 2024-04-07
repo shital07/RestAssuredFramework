@@ -39,7 +39,7 @@ public class Assignment {
         Response getresponse2 = new ApiBuilders().requestBuilderForGetCalls().get("/booking");
         int s2=getresponse2.jsonPath().getList("$").size();
        // Assertions.assertThat(s2).isEqualTo(size+1);
-
+System.out.println("Adding a comment just to check automatic trigger");
 
     }
 
