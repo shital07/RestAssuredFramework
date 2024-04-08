@@ -6,7 +6,7 @@ pipeline {
     stages {
        stage('Testing') {
             steps {
-                sh 'cd'
+                sh 'pwd'
                 sh 'mvn -version'
                 sh 'mvn test'
             }
