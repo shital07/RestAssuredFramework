@@ -4,12 +4,13 @@ pipeline {
     }
     
     stages {
-       stage('Testing') {
+        stage('Testing') {
             steps {
-                    def commandOutput = sh(script: 'mvn test 2>&1', returnStdout: true).trim(),
-                    println "Command output:\n${commandOutput}",
-                sh 'mvn test'
+                script {
+                    def commandOutput = sh(script: 'mvn test 2>&1', returnStdout: true).trim()
+                    println "Command output:\n${commandOutput}"
+                    sh 'mvn test'
+                }
             }
         }
     }
-}
