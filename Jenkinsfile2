@@ -7,6 +7,7 @@ pipeline {
        stage('Testing') {
             steps {
                 sh 'cd /usr/apiautomation'
+                sh 'pwd'
                 sh 'mvn -version'
                 sh 'mvn test'
             }
