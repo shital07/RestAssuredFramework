@@ -6,9 +6,6 @@ pipeline {
     stages {
        stage('Testing') {
             steps {
-                sh 'cd /usr/apiautomation'
-                sh 'pwd'
-                sh 'mvn -version'
                     def commandOutput = sh(script: 'mvn test 2>&1', returnStdout: true).trim()
                     println "Command output:\n${commandOutput}"
                 sh 'mvn test'
