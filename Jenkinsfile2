@@ -8,6 +8,7 @@ pipeline {
             steps {
                 script {
                     def commandOutput = sh(script: 'mvn test 2>&1', returnStdout: true).trim()
+echo "hi"
                     println "Command output:\n${commandOutput}"
                     sh 'mvn test'
                 }
